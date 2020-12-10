@@ -37,8 +37,9 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/deposit' do
-    @user = User.find_by(id: session[:user_id])binding.pry
-    @user.balance += params[:deposit].to_i
+    @user = User.find_by(id: session[:user_id])
+    deposit = params[:deposit].to_i
+    @user.balance += 
     erb :'/account'
   end
   
