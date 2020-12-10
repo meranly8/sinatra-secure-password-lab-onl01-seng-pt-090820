@@ -39,7 +39,7 @@ class ApplicationController < Sinatra::Base
   post '/deposit' do
     @user = User.find_by(id: session[:user_id])
     deposit = params[:deposit].to_i
-    @user.balance += 
+    @user.balance += deposit
     erb :'/account'
   end
   
